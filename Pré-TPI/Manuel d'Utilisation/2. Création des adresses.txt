@@ -1,0 +1,14 @@
+Création des adresses:
+1. Policy & Objects -> Addresses -> Create New -> Address
+2.
+Name: Sous-Réseau3
+Color: orange
+Type: Subnet
+IP/Netmask: 192.168.30.0/24
+Interface: internal3
+Show in address list: on
+Static route configuration: off
+Comments: création addresse Sous-Réseau3 dma
+3. OK
+Si vous vous débranchez du port physique sur lequel vous êtes actuellement et vous vous branchez sur le port 3, vous arriverez au GUI, et un cmd ipconfig vous donnera une adresse appartenant au sous-réseau 3
+Suivre la même procédure pour les autres sous-réseaux.

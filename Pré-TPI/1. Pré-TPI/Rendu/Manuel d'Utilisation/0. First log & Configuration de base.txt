@@ -1,0 +1,21 @@
+1. se logger au GUI via adresse ip 192.168.1.99
+2. changer de mot de passe admin -> Pa$$w0rd
+3. changer d'host name: System -> Settings -> Host name -> FortiGate-80F-DMA
+4. changer l'heure System -> Settings -> System time -> GMT+1:00
+5. changer l'idle timeout System -> Settings-> Administration Settings -> Idle timeout -> 60
+apply
+6. mettre à jour le Firmware -> impossible car l'appareil n'est pas enregistré, on reste a FortiOS v6.2.3 build6404
+7. créer un administrateur: System -> Administrators -> Create New -> Administrator
+Username: dma
+Type: Local User
+Password: Pa$$word
+Confirm Password: Pa$$word
+Comments: compte admin damien mayor
+Administrator Profile: super_admin
+Email Address: damien.mayor@cpnv.ch
+SMS: off
+Two-factor Authentication: off
+Restrict login to trusted hosts: off
+Restrict admin to guest account provisioning only: off
+ok
+8. mettre un mot de passe hyper-badass pour l'admin, ce compte n'étant pas désactivable. Il exist plusieurs niveau de policy pour les mots de passe

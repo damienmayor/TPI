@@ -1,0 +1,66 @@
+Pour le moment si vous êtes connecté sur port3 ou 4 vous n'avez pas accès à internet.
+Pour pouvoir y accéder, il va falloir créer des règles, mais avant ça: des adresses:
+
+
+1. Se rendre sur Policy & Objects -> Address -> Create New -> Address
+2.
+Name: perdu.com
+Color: vert
+Type: FQDN
+FQDN: www.perdu.com
+Interface: any
+Show in address list: on
+Static route configuration: off
+Comments: création adresse perdu.com dma
+3. OK
+
+4. Création de la règle de firewall Policy & Objects -> IPv4 Policy -> Create New
+5.
+Name: perdu?
+Incoming Interface: internal3
+Outgoing Interface: wan1
+Source: all
+Destination: perdu.com
+Schedule: always
+Service: HTTP, HTTPS
+Action: ACCEPT
+Inspection Mode: Flow-based
+NAT: on
+IP Pool Configuration: Use Outgoing Interface Address
+Preserve Source Port: off
+Protocol Options: default
+AntiVirus: off
+Web Filter: off
+DNS Filter: off
+Application control: off
+IPS: off
+SSL Inspection: no-inspection
+Log Allowed Traffic: Security Events
+Comments: création règle perdu.com dma
+Enable this policy: on
+6. OK
+Cela ne fonctionne pas, il va falloir autoriser le dns en créant une règle
+7. Création de la règle de firewall Policy & Objects -> IPv4 Policy -> Create New
+8.
+Name: dns
+Incoming Interface: internal3
+Outgoing Interface: wan1
+Source: all
+Destination: all
+Schedule: always
+Service: DNS
+Action: ACCEPT
+Inspection Mode: Flow-based
+NAT: on
+IP Pool Configuration: Use Outgoing Interface Address
+Preserve Source Port: off
+Protocol Options: default
+AntiVirus: off
+Web Filter: off
+DNS Filter: off
+Application control: off
+IPS: off
+SSL Inspection: no-inspection
+Log Allowed Traffic: Security Events
+Comments: création règle dns dma
+Enable this policy: on

@@ -1,0 +1,55 @@
+Création de VLAN
+1.Se rendre dans Network -> Interface -> Hardware Switch -> internal
+2. Interface members: sortir les ports à qui l'on souhaite modifier: dans mon cas internal1 à internal4, laissant internal5 & internal6
+Attention, ceci va rendre vos ports physique 1 à 4 inutilisable, il sera même impossible de se connecter au GUI, connectez vous au ports restant 5 ou 6
+3. Se connecter à l'interface physique internal1: Network -> Interfaces -> Physical Interface -> internal1
+4. 
+Name: internal1
+Alias: -
+Type: Physical Interface1
+VLAN ID: 10
+Role: LAN
+Addressing mode: Manual
+IP/Netmask: ip et masque selon vos besoin. 192.168.10.1/255.255.255.0 (vous pouvez également écrire /24)
+Create address object matching subnet: on
+Secondary IP address: off
+Administrative access: off
+DHCP Server: off
+Device detection: on
+Security mode: off
+Outbound shaping profile: off
+Comments: création vlan ROUGE dma
+Status: Enabled
+5. OK
+Network -> Interfaces - Physical Interface -> internal1: vous devriez voir votre VLAN ROUGE
+6. Répéter la procedure pour la création du vlan BLEU, en adaptant l'alias, le vlan id ainsi que la plage d'adresse ip et son masque.
+Il va vous falloir un switch manageable afin de pouvoir utiliser vos VLANs.
+
+Voici une alternative qui passe par la création de sous-réseaux.
+1. Se rendre dans Network -> Interface -> Physical Interface -> internal3
+2.
+Name: internal3
+Alias: 
+Type: Physical Interface
+Role: Undefined
+Addressing mode: Manual
+IP/Netmask: 192.168.30.1/255.255.255.0
+Secondary IP address: off
+IPv4: HTTPS, HTTP, PING, SSH
+Receive LLDP: Use VDOM Setting
+Transmit LLDP: Use VDOM Setting
+DHCP Server: on
+Address range: 192.168.30.2-192.168.30.254
+Netmask: 255.255.255.0
+Default gateway: Same as Interface IP
+DNS server: Same as System DNS
+Lease time:604800
+FortiClient On-Net Status: on
+Device detection: off
+Security mode: off
+Outbound shaping profile: off
+Comments: création sous-réseau sur port3 dma
+Status: Enabled
+3. OK
+
+
