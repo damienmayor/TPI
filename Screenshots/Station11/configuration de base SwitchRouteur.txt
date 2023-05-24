@@ -1,0 +1,164 @@
+
+
+
+
+
+
+
+
+yes
+
+At any point you may enter a question mark '?' for help.
+Use ctrl-c to abort configuration dialog at any prompt.
+Default settings are in square brackets '[]'.
+
+
+Basic management setup configures only enough connectivity
+for management of the system, extended setup will ask you
+to configure each interface on the system
+
+Would you like to enter basic management setup? [yes/no]: yes
+Configuring global parameters:
+
+  Enter host name [Switch]: SRdmaTPI
+
+  The enable secret is a password used to protect access to
+  privileged EXEC and configuration modes. This password, after
+  entered, becomes encrypted in the configuration.
+  Enter enable secret: 21699
+
+  The enable password is used when you do not specify an
+  enable secret password, with some older software versions, and
+  some boot images.
+  Enter enable password: 2344037
+
+  The virtual terminal password is used to protect
+  access to the router over a network interface.
+  Enter virtual terminal password: Pa$$w0rd
+  Configure SNMP Network Management? [no]: no
+
+Current interface summary
+
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  unassigned      YES unset  up                    down
+FastEthernet0/1        unassigned      YES unset  down                  down
+FastEthernet0/2        unassigned      YES unset  down                  down
+FastEthernet0/3        unassigned      YES unset  down                  down
+FastEthernet0/4        unassigned      YES unset  down                  down
+FastEthernet0/5        unassigned      YES unset  down                  down
+FastEthernet0/6        unassigned      YES unset  down                  down
+FastEthernet0/7        unassigned      YES unset  down                  down
+FastEthernet0/8        unassigned      YES unset  down                  down
+FastEthernet0/9        unassigned      YES unset  down                  down
+FastEthernet0/10       unassigned      YES unset  down                  down
+FastEthernet0/11       unassigned      YES unset  down                  down
+FastEthernet0/12       unassigned      YES unset  down                  down
+FastEthernet0/13       unassigned      YES unset  down                  down
+FastEthernet0/14       unassigned      YES unset  down                  down
+FastEthernet0/15       unassigned      YES unset  down                  down
+FastEthernet0/16       unassigned      YES unset  down                  down
+FastEthernet0/17       unassigned      YES unset  down                  down
+FastEthernet0/18       unassigned      YES unset  down                  down
+FastEthernet0/19       unassigned      YES unset  down                  down
+FastEthernet0/20       unassigned      YES unset  down                  down
+FastEthernet0/21       unassigned      YES unset  down                  down
+FastEthernet0/22       unassigned      YES unset  down                  down
+FastEthernet0/23       unassigned      YES unset  down                  down
+FastEthernet0/24       unassigned      YES unset  down                  down
+GigabitEthernet0/1     unassigned      YES unset  down                  down
+GigabitEthernet0/2     unassigned      YES unset  down                  down
+
+Enter interface name used to connect to the
+management network from the above interface summary:
+% No defaulting allowed
+
+Enter interface name used to connect to the
+management network from the above interface summary: FastEthernet0/24
+
+Configuring interface FastEthernet0/24:
+  Configure IP on this interface? [no]: no
+Would you like to enable as a cluster command switch? [yes/no]: no
+
+The following configuration command script was created:
+
+hostname SRdmaTPI
+enable secret 5 $1$9vUM$1SrXtcCgzs7CyEgH4r.fL.
+enable password 2344037
+line vty 0 15
+password Pa$$w0rd
+no snmp-server
+!
+no ip routing
+
+!
+interface Vlan1
+shutdown
+no ip address
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+no shutdown
+no ip address
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+end
+
+
+[0] Go to the IOS command prompt without saving this config.
+[1] Return back to the setup without saving this config.
+[2] Save this configuration to nvram and exit.
+
+Enter your selection [2]:
+Building configuration...
+[OK]
+Use the enabled mode 'configure' command to modify this configuration.
+
+SRdmaTPI>

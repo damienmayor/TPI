@@ -1,0 +1,51 @@
+dmaTPI#ping 10.0.0.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.0.0.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms
+dmaTPI#ping 10.0.0.3
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.0.0.3, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/4 ms
+dmaTPI#ping 192.168.128.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.128.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms
+dmaTPI#ping 192.168.128.2
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.128.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/4 ms
+dmaTPI#ping 172.16.0.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 172.16.0.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/4 ms
+dmaTPI#ping 172.16.0.4
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 172.16.0.4, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms
+dmaTPI#ping 192.168.128.129
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.128.129, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms
+dmaTPI#ping 192.168.128.130
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.128.130, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+dmaTPI#ping 192.168.128.130
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.128.130, timeout is 2 seconds:
+....U
+Success rate is 0 percent (0/5)
+dmaTPI#ping 192.168.128.130
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.128.130, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/4 ms
+dmaTPI#
