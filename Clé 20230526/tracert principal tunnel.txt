@@ -1,0 +1,11 @@
+C:\Users\Administrateur>tracert 192.168.128.130
+
+Détermination de l’itinéraire vers 192.168.128.130 avec un maximum de 30 sauts.
+
+  1    <1 ms    <1 ms    <1 ms  192.168.128.1
+  2    <1 ms    <1 ms    <1 ms  192.168.128.129
+  3    <1 ms    <1 ms    <1 ms  192.168.128.130
+
+Itinéraire déterminé.
+
+C:\Users\Administrateur>

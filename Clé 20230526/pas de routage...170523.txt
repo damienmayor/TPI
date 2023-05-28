@@ -1,0 +1,153 @@
+SRdmaTPI#show running-config
+Building configuration...
+
+Current configuration : 3274 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname SRdmaTPI
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$9vUM$1SrXtcCgzs7CyEgH4r.fL.
+enable password 2344037
+!
+!
+!
+no aaa new-model
+system mtu routing 1500
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-3288296960
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3288296960
+ revocation-check none
+ rsakeypair TP-self-signed-3288296960
+!
+!
+crypto pki certificate chain TP-self-signed-3288296960
+ certificate self-signed 01
+  30820241 308201AA A0030201 02020101 300D0609 2A864886 F70D0101 04050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 33323838 32393639 3630301E 170D3933 30333031 30303031
+  30345A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 32383832
+  39363936 3030819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281
+  8100BAAF C4540BF8 B67F5F18 3B4E90A6 AB0BDB76 E97E6F63 ABD2C23F E4408E08
+  44A8689F A667EDF3 B13FC269 7B10810E 7B13A690 AC86B274 2EA2F305 B54BF743
+  C3187D0A 0032B433 8C1395A7 557C0286 EB3AE75F 34F3210B E14F7A2C 77B554F9
+  7ECCC23C 2912FE54 4F2DCE4E DC08F28C 2460297F 086341C2 77DC17D7 317ECFA0
+  32270203 010001A3 69306730 0F060355 1D130101 FF040530 030101FF 30140603
+  551D1104 0D300B82 09535264 6D615450 492E301F 0603551D 23041830 16801419
+  194D8BFA ED299B0A 898780B1 4B70EAFB DA017930 1D060355 1D0E0416 04141919
+  4D8BFAED 299B0A89 8780B14B 70EAFBDA 0179300D 06092A86 4886F70D 01010405
+  00038181 003716B4 9CE19631 8D0511E4 8B15CC42 DB1899DB 55D29422 64C95E36
+  88357CAC 5C5C9749 E92316A7 00EC061A 51E7A399 0ABD90FA CD10BB42 3FD8EAB9
+  F76D0A77 06C5A24F 3C4FA3D2 6E862FAF 8621FEA5 505E3EDE 79C4C6DB 5C06A7AE
+  0B687FA5 029D6FBD 8AA65DD5 2BB149C0 418986C4 E99C3A69 A06DF589 EDE58083
+  C020E388 3F
+  quit
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+interface FastEthernet0/1
+ no switchport
+ ip address 10.0.0.1 255.0.0.0
+!
+interface FastEthernet0/2
+ no switchport
+ ip address 172.16.0.1 255.255.0.0
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+ no switchport
+ ip address 192.168.228.1 255.255.255.0
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+ip route 192.168.128.0 255.255.255.128 10.0.0.3
+ip route 192.168.128.128 255.255.255.224 172.16.0.4
+ip http server
+ip http secure-server
+!
+!
+!
+line con 0
+line vty 0 4
+ password Pa$$w0rd
+ login
+line vty 5 15
+ password Pa$$w0rd
+ login
+!
+end
+
+SRdmaTPI#
+SRdmaTPI#show ip route
+Default gateway is not set
+
+Host               Gateway           Last Use    Total Uses  Interface
+ICMP redirect cache is empty
+SRdmaTPI#

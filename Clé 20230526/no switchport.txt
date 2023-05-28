@@ -1,0 +1,29 @@
+Dear Jahanzeb,
+
+In simple language, while configuring a Layer 2 Switch e.g 2960, we need to create VLAN's and provide ip address in VLAN's and then tag the ports in respective VLAN. In this scenario, when there is a need for intervlan communication we do connect a router with the switch and use the command 'IP ROUTING'. We can't configure routing protocols in the switch and so have to use the router for the same purpose.
+But in case of a Layer 3 switch e.g 3650, we could use it as a Layer 2 as well as Layer 3 device by simply issuing the command 'SWITCHPORT' or 'NO SWITCHPORT' after entering in the specific port need to be used.
+By applying 'SWITCHPORT' command, we configure the port to work as a Layer 2 port and would have to bind it with any particular vlan or could use as a trunk port. And by using 'NO SWITCHPORT' command, we enable the Layer 3 function of the switch, where we could configure an IP ADDRESS against that particular port (just like that of routers) and configure the protocols too.
+
+Here is the configuration example for Layer 2 switchport
+Switch#configure terminal
+Switch(config)#interface vlan xyz
+Switch(config-if)#ip address x.x.x.x x.x.x.x
+Switch(config-if)#exit
+Switch(config)#interface fastethernet 0/1/1
+Switch(config-if)#switchport mode access/trunk
+Switch(config-if)#switchport access vlan xyz (any VLAN which you want this port to be part of)
+Switch(config-if)#exit
+
+Here is configuration example for Layer 3 switchport
+Switch#configure terminal
+Switch(config)#interface fastethernet 0/1/1
+Switch(config)#no switchport (it does support SWITCHPORT command for Layer 2 functionality)
+Switch(config)#ip address x.x.x.x x.x.x.x (same as that of router ports)
+Switch(config)#no shut
+Switch(config)#exit
+
+Hope it would help you out a bit :)
+
+Regards
+
+Chinmoy Boruah

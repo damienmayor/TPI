@@ -1,0 +1,91 @@
+FortiGateTPI $ exec ping 192.168.128.130
+PING 192.168.128.130 (192.168.128.130): 56 data bytes
+64 bytes from 192.168.128.130: icmp_seq=0 ttl=128 time=0.3 ms
+64 bytes from 192.168.128.130: icmp_seq=1 ttl=128 time=0.2 ms
+64 bytes from 192.168.128.130: icmp_seq=2 ttl=128 time=0.2 ms
+64 bytes from 192.168.128.130: icmp_seq=3 ttl=128 time=0.2 ms
+64 bytes from 192.168.128.130: icmp_seq=4 ttl=128 time=0.2 ms
+
+--- 192.168.128.130 ping statistics ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max = 0.2/0.2/0.3 ms
+
+FortiGateTPI $ exec ping 192.168.128.1129
+
+^[[AUnable to resolve hostname.
+
+FortiGateTPI $
+FortiGateTPI $ exec ping 192.168.128.129
+PING 192.168.128.129 (192.168.128.129): 56 data bytes
+64 bytes from 192.168.128.129: icmp_seq=0 ttl=255 time=0.1 ms
+64 bytes from 192.168.128.129: icmp_seq=1 ttl=255 time=0.0 ms
+64 bytes from 192.168.128.129: icmp_seq=2 ttl=255 time=0.0 ms
+64 bytes from 192.168.128.129: icmp_seq=3 ttl=255 time=0.0 ms
+64 bytes from 192.168.128.129: icmp_seq=4 ttl=255 time=0.0 ms
+
+--- 192.168.128.129 ping statistics ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max = 0.0/0.0/0.1 ms
+
+FortiGateTPI $ exec ping 172.16.0.4
+PING 172.16.0.4 (172.16.0.4): 56 data bytes
+64 bytes from 172.16.0.4: icmp_seq=0 ttl=255 time=0.1 ms
+64 bytes from 172.16.0.4: icmp_seq=1 ttl=255 time=0.1 ms
+64 bytes from 172.16.0.4: icmp_seq=2 ttl=255 time=0.1 ms
+64 bytes from 172.16.0.4: icmp_seq=3 ttl=255 time=0.0 ms
+64 bytes from 172.16.0.4: icmp_seq=4 ttl=255 time=0.1 ms
+
+--- 172.16.0.4 ping statistics ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max = 0.0/0.0/0.1 ms
+
+FortiGateTPI $ exec ping 172.16.0.1
+PING 172.16.0.1 (172.16.0.1): 56 data bytes
+64 bytes from 172.16.0.1: icmp_seq=0 ttl=255 time=0.8 ms
+64 bytes from 172.16.0.1: icmp_seq=1 ttl=255 time=0.3 ms
+64 bytes from 172.16.0.1: icmp_seq=2 ttl=255 time=0.4 ms
+64 bytes from 172.16.0.1: icmp_seq=3 ttl=255 time=0.4 ms
+64 bytes from 172.16.0.1: icmp_seq=4 ttl=255 time=0.3 ms
+
+--- 172.16.0.1 ping statistics ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max = 0.3/0.4/0.8 ms
+
+FortiGateTPI $ exec ping 10.0.0.1
+PING 10.0.0.1 (10.0.0.1): 56 data bytes
+sendto failed
+sendto failed
+sendto failed
+sendto failed
+sendto failed
+
+--- 10.0.0.1 ping statistics ---
+5 packets transmitted, 0 packets received, 100% packet loss
+
+FortiGateTPI $ exec ping 10.0.0.3
+PING 10.0.0.3 (10.0.0.3): 56 data bytes
+sendto failed
+sendto failed
+sendto failed
+sendto failed
+sendto failed
+
+
+--- 10.0.0.3 ping statistics ---
+5 packets transmitted, 0 packets received, 100% packet loss
+
+FortiGateTPI $
+FortiGateTPI $ exec ping 192.168.128.1
+PING 192.168.128.1 (192.168.128.1): 56 data bytes
+sendto failed
+sendto failed
+sendto failed
+sendto failed
+sendto failed
+
+
+--- 192.168.128.1 ping statistics ---
+5 packets transmitted, 0 packets received, 100% packet loss
+
+FortiGateTPI $
+FortiGateTPI $
